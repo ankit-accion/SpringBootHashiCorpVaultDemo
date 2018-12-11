@@ -13,17 +13,17 @@ iii. Hashicorp Vault.
 
 
 1. Start Consul
-==========================================================================================================================================
+================================================================================
 
 	a. Start the consul with below given command
 		consul agent -dev
 		
 		this will start consul in dev mode and we can see all the services registered to consul on loacalhost:8500
 
-===========================================================================================================================================
+================================================================================
 
 2. Start Hashicorp Vault
-===========================================================================================================================================
+================================================================================
 
 	a. Start vault server by using below given command in dev mode with root access
 		vault server --dev --dev-root-token-id="00000000-0000-0000-0000-000000000000"
@@ -56,11 +56,10 @@ iii. Hashicorp Vault.
 		
 	Vault is now configured to generate and provide dynamic credentials to connect to DB at any time.
 	
-=============================================================================================================================================
-
+================================================================================
 3. Start EmployeeManagement Application
 
-=============================================================================================================================================
+================================================================================
 
 	a. Run "gradle bootRun" in the root of project
 	   The application will start running and register itself on consul.
@@ -72,11 +71,11 @@ iii. Hashicorp Vault.
 
 	EmployeeManagement Application should be connected to DB and should work fine now.
 	
-=============================================================================================================================================
+================================================================================
 
 4. Start EmployeeDashboard Application
 
-=============================================================================================================================================
+================================================================================
 
 	a.  Run "gradle bootRun" in the root of project
 		The application will satart and will register itself on consul and after that will also discover the EmployeeManagement service.
@@ -85,4 +84,4 @@ iii. Hashicorp Vault.
 		As of now only one API is implemented to get list of all the employees from EmployeeManagement service.
 		Doing a get request should bring the list of all employees stored in DB using EmployeeManagement service.
 		
-==============================================================================================================================================
+================================================================================
