@@ -42,9 +42,11 @@ iii. Hashicorp Vault.
 		Will get a message "Success! Enabled the database secrets engine at: database/" if enabled successfully.
 		
 	f. Configure database details like DB role, connection-url, username and password by below given command
+	
 		vault write database/config/postgresql plugin_name=postgresql-database-plugin allowed_roles="manager" connection_url="postgresql://{{username}}:{{password}}@localhost:5432/employeemanagement?sslmode=disable" username="postgres" password="postgres"
 		
 	g. Create and configure DB for dyanmic credentials from Vault using below given command
+	
 		vault write database/roles/manager db_name=postgresql creation_statements="CREATE ROLE "'"{{name}}"'" WITH SUPERUSER LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}';" revocation_sql="SELECT revoke_access('{{name}}'); DROP user "'"{{name}}"'";" default_ttl="1h" max_ttl="24h"
 		
 	h. We can read the dynamically created credentials by below given command
