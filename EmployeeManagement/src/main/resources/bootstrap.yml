@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    vault:
+      uri: http://localhost:8200
+      scheme: http
+      host: localhost
+      port: 8200
+      generic:
+        enabled: false
+      database:
+        enabled: true
+        role: manager
+      connection-timeout: 5000
+      read-timeout: 15000
+      token: 00000000-0000-0000-0000-000000000000
+  datasource:
+    url: jdbc:postgresql://localhost:5432/employeemanagement?currentSchema=emp_details
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: EmpMngmt
+  cloud:
+    discovery:
+      enabled: true
+    consul:
+      port: 8500
+      host: localhost
+      discovery:
+        instanceId: ${spring.application.name}:${random.value}
+        fail-fast: true
+        prefer-ip-address: true
+server:
+  port: 9094
