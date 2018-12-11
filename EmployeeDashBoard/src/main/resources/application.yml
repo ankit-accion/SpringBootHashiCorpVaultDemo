@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: EmpDashB
+server:
+  port: 9095
