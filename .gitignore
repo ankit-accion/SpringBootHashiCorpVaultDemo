@@ -1,6 +1,7 @@
 .gradle
 /build/
-
+/EmployeeDashBoard/bin/
+/EmployeeManagement/bin/
 # Ignore Gradle GUI config
 gradle-app.setting
 
