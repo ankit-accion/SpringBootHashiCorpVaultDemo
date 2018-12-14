@@ -7,6 +7,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.Data;
+
+@Data
 @Entity
 public class EmployeeDetails {
 
@@ -30,52 +33,4 @@ public class EmployeeDetails {
 
 	@NotNull(message = "Please enter a valid 10 digit mobile number")
 	private long mobile;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getEmpFirstName() {
-		return empFirstName;
-	}
-
-	public void setEmpFirstName(String empFirstName) {
-		this.empFirstName = empFirstName;
-	}
-
-	public String getEmpLastName() {
-		return empLastName;
-	}
-
-	public void setEmpLastName(String empLastName) {
-		this.empLastName = empLastName;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public String getEmailId() {
-		return emailId;
-	}
-
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
-	}
-
-	public long getMobile() {
-		return mobile;
-	}
-
-	public void setMobile(long mobile) {
-		this.mobile = mobile;
-	}
 }
