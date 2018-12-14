@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.NonNull;
+
 @RestController
 @RequestMapping(path = "/employee")
 public class EmployeedDetailsController {
@@ -23,12 +25,12 @@ public class EmployeedDetailsController {
 	private EmployeeDetailsService empService;
 
 	@PostMapping(path = "/save")
-	public EmployeeDetails saveEmployee(@RequestBody EmployeeDetails empDetails) {
+	public EmployeeDetails saveEmployee(@RequestBody @NonNull EmployeeDetails empDetails) {
 		return empService.createEmployee(empDetails);
 	}
 
 	@GetMapping(path = "/id")
-	public Optional<EmployeeDetails> getEmpById(@RequestParam Integer id) {
+	public Optional<EmployeeDetails> getEmpById(@RequestParam @NonNull Integer id) {
 		return empService.getEmployeeById(id);
 	}
 
@@ -38,7 +40,7 @@ public class EmployeedDetailsController {
 	}
 
 	@PutMapping(path = "/update")
-	public EmployeeDetails updateEmployee(@RequestBody EmployeeDetails empDetails) {
+	public EmployeeDetails updateEmployee(@RequestBody @NonNull EmployeeDetails empDetails) {
 		return empService.updateEmployee(empDetails);
 	}
 
@@ -48,7 +50,7 @@ public class EmployeedDetailsController {
 	}
 
 	@DeleteMapping(path = "/deleteEmp")
-	public void deleteEmp(@RequestBody EmployeeDetails employeeDetails) {
+	public void deleteEmp(@RequestBody @NonNull EmployeeDetails employeeDetails) {
 		empService.deleteEmp(employeeDetails);
 	}
 }
